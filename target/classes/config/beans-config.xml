@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="articleDao" class="com.stock.mvc.dao.impl.ArticleDaoImpl" />
+		<bean id="articleService" class="com.stock.mvc.services.impl.ArticleServiceImpl">
+			<property name="dao" ref="articleDao"></property>
+		</bean>
+		
+		<bean id="clientDao" class="com.stock.mvc.dao.impl.ClientDaoImpl" />
+		<bean id="clientService" class="com.stock.mvc.services.impl.ClientServiceImpl">
+			<property name="dao" ref="clientDao"></property>
+		</bean>
+		
+</beans>
