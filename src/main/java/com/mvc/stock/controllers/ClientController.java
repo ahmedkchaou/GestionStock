@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.stock.mvc.entites.Client;
 import com.stock.mvc.services.IClientService;
 
-
 @Controller
 @RequestMapping(value = "/client")
 public class ClientController {
 
 	@Autowired
 	private IClientService clientService;
-	
+
 	@RequestMapping(value = "/")
 	public String client(Model model) {
 		List<Client> clients = clientService.selectAll();
@@ -28,6 +27,5 @@ public class ClientController {
 		model.addAttribute("clients", clients);
 		return "client/client";
 	}
-	
-	
+
 }
