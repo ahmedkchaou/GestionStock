@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.stock.mvc.entites.Client;
 import com.stock.mvc.services.IClientService;
@@ -26,6 +27,12 @@ public class ClientController {
 		}
 		model.addAttribute("clients", clients);
 		return "client/client";
+	}
+	
+	@RequestMapping(value = "/ajoutClient", method = RequestMethod.GET)
+	public String ajoutClient(Model model) {
+		
+		return "client/ajoutClient";
 	}
 
 }

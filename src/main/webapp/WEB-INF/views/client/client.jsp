@@ -77,16 +77,28 @@
 						</h1>
 					</div>
 					<!-- /.col-lg-12 -->
-					
-				<div class="row">
-					<div class="col-lg-12">
-						<ol class="breadcrumb">
-						  <li><a href="<c:url value="/client/nouveau" />" ><i class="fa fa-plus">&nbsp;<fmt:message code="common.ajouter" /></i></a></li>
-						  <li><a href="#"><i class="fa fa-download">&nbsp;<fmt:message code="common.exporter" /></i></a></li>
-						  <li><a href="#"><i class="fa fa-upload">&nbsp;<fmt:message code="common.importer" /></i></a></li>
-						</ol>					
-					</div>                
-                </div>
+
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a
+							href="<c:url value="/home/" />">Home</a></li>
+						<li class="breadcrumb-item"><a
+							href="<c:url value="/client/" />">Clients</a></li>
+						<li class="breadcrumb-item active">Liste Clients</li>
+					</ol>
+
+					<div class="row">
+						<div class="col-lg-12">
+							<ol class="breadcrumb">
+								<li><a href="<c:url value="/client/ajoutClient" />"><i
+										class="fa fa-plus">&nbsp;<fmt:message
+												code="common.ajouter" /></i></a></li>
+								<li><a href="#"><i class="fa fa-download">&nbsp;<fmt:message
+												code="common.exporter" /></i></a></li>
+								<li><a href="#"><i class="fa fa-upload">&nbsp;<fmt:message
+												code="common.importer" /></i></a></li>
+							</ol>
+						</div>
+					</div>
 
 					<div class="row">
 						<div class="col-lg-12">
@@ -110,17 +122,27 @@
 											</tr>
 										</thead>
 										<tbody>
-										<c:forEach items="${clients }" var = "client">
-	                                    <tr class="odd gradeX">
-	                                        <td class="center"><img src="${client.getPhoto() }" width="50px" height="50px"/></td>
-	                                        <td>${client.getNom() }</td>
-	                                        <td>${client.getPrenom() }</td>
-	                                        <td>${client.getAdresse() }</td>
-	                                        <td>${client.getMail() }</td>
-	                                        <td>Actions à faire</td>
-											</tr>
+											<c:forEach items="${clients }" var="client">
+												<tr class="odd gradeX">
+													<td class="center"><img src="${client.getPhoto() }"
+														width="50px" height="50px" /></td>
+													<td>${client.getNom() }</td>
+													<td>${client.getPrenom() }</td>
+													<td>${client.getAdresse() }</td>
+													<td>${client.getMail() }</td>
+													<td>
+														
+															<li><a href="<c:url value="/client/modifier" />"><i
+																	class="fa fa-edit">&nbsp;<fmt:message
+																			code="common.modifier" /></i></a></li>
+															<li><a href="#"><i class="fa fa-trash-o">&nbsp;<fmt:message
+																			code="common.supprimer" /></i></a></li>
+															
+														
+													</td>
+												</tr>
 											</c:forEach>
-										
+
 										</tbody>
 									</table>
 									<!-- /.table-responsive -->
