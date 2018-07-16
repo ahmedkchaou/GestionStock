@@ -39,7 +39,7 @@ public class LoginController {
 	@RequestMapping(value = "/failedlogin")
 	public String failedLogin() {
 		
-		return "errors/failedlogin";
+		return "login/login";
 	}
 	
 }
