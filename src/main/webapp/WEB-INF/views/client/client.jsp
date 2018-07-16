@@ -131,14 +131,19 @@
 													<td>${client.getAdresse() }</td>
 													<td>${client.getMail() }</td>
 													<td>
-														
-															<li><a href="<c:url value="/client/modifier" />"><i
-																	class="fa fa-edit">&nbsp;<fmt:message
-																			code="common.modifier" /></i></a></li>
-															<li><a href="#"><i class="fa fa-trash-o">&nbsp;<fmt:message
-																			code="common.supprimer" /></i></a></li>
-															
-														
+
+														<li><c:url
+																value="/client/modifier/${client.getIdClient() }"
+																var="urlModif" /> <a href="${urlModif }"> <i
+																class="fa fa-edit">&nbsp;<fmt:message
+																		code="common.modifier" /></i></a></li>
+														<li><c:url
+																value="/client/supprimer/${client.getIdClient() }"
+																var="urlRemove" /> <a href="${urlRemove }"> <i
+																class="fa fa-trash-o">&nbsp;<fmt:message
+																		code="common.supprimer" /></i></a></li>
+
+
 													</td>
 												</tr>
 											</c:forEach>
