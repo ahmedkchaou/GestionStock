@@ -7,10 +7,10 @@
 								 http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
 	<s:http auto-config="true">
-		<s:intercept-url pattern="/articlett/" access="ROLE_ADMIN, ROLE_USER"/>
-		<s:intercept-url pattern="/articlett/**" access="ROLE_ADMIN"/>
-		<s:intercept-url pattern="/clienttt/" access="ROLE_ADMIN, ROLE_USER"/>
-		<s:intercept-url pattern="/clienttt/**" access="ROLE_ADMIN"/>
+		<s:intercept-url pattern="/article/" access="ROLE_ADMIN, ROLE_USER"/>
+		<s:intercept-url pattern="/article/**" access="ROLE_ADMIN"/>
+		<s:intercept-url pattern="/client/" access="ROLE_ADMIN, ROLE_USER"/>
+		<s:intercept-url pattern="/client/**" access="ROLE_ADMIN"/>
 		<s:intercept-url pattern="/fournisseur/" access="ROLE_ADMIN, ROLE_USER"/>
 		<s:intercept-url pattern="/fournisseur/" access="ROLE_ADMIN, ROLE_USER"/>
 		<s:intercept-url pattern="/fournisseur/**" access="ROLE_ADMIN"/>

@@ -1,14 +1,18 @@
 package com.stock.mvc.entites;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import org.codehaus.jackson.annotate.JsonIgnore;
+
 
 @Entity
 public class Client implements Serializable{
@@ -22,6 +26,9 @@ public class Client implements Serializable{
 	private String prenom;
 	
 	private String adresse;
+	
+	@Temporal(TemporalType.DATE)
+	private Date dateIntegration;
 	
 	private String photo;
 	
@@ -81,6 +88,15 @@ public class Client implements Serializable{
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+	
+
+	public Date getDateIntegration() {
+		return dateIntegration;
+	}
+
+	public void setDateIntegration(Date dateIntegration) {
+		this.dateIntegration = dateIntegration;
+	}
 
 	@JsonIgnore
 	public List<CommandeClient> getCommandeClients() {
@@ -90,4 +106,5 @@ public class Client implements Serializable{
 	public void setCommandeClients(List<CommandeClient> commandeClients) {
 		this.commandeClients = commandeClients;
 	}
+	
 }
