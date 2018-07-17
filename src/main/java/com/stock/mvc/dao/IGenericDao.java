@@ -10,6 +10,8 @@ public interface IGenericDao<E> {
 	
 	public List<E> selectAll();
 	
+	public List<E> selectAllJoin();
+	
 	public List<E> selectAll(String sortField, String sort);
 
 	public E getById(Long id);

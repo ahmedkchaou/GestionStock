@@ -25,6 +25,8 @@ public class Utilisateur implements Serializable{
 	
 	private String photo;
 	
+	private String nameRole;
+	
 	private boolean actived;
 	
 	@OneToMany(mappedBy = "utilisateur")
@@ -76,6 +78,15 @@ public class Utilisateur implements Serializable{
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
+	}
+	
+
+	public String getNameRole() {
+		return nameRole;
+	}
+
+	public void setNameRole(String nameRole) {
+		this.nameRole = nameRole;
 	}
 
 	public boolean isActived() {

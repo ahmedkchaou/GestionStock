@@ -58,6 +58,24 @@ public class GenericDaoImpl<E> implements IGenericDao<E> {
 		return query.getResultList();
 			
 	}
+	
+	@Override
+	public List<E> selectAllJoin() {
+		
+		//Query query= em.createQuery("SELECT u.nom,u.prenom,u.mail,u.motDePasse,u.actived,r.roleName FROM utilisateur u, roles r where u.idUtilisateur=r.idUtilisateur");
+		
+		Query query=em.createQuery("SELECT t FROM "+ type.getSimpleName() + " t INNER JOIN t.roles r");
+
+		return query.getResultList();			
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see com.stock.mvc.dao.IGenericDao#getById(java.lang.Long)
+	 * 
+	 * List<Object[]> results = em.createQuery("SELECT p.firstName, p.lastName, n.phoneNumber FROM Person p JOIN PhoneBookEntry n ON p.firstName = n.firstName AND p.lastName = n.lastName").getResultList();
+
+	 */
 
 	@Override
 	public E getById(Long id) {

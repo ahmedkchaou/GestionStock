@@ -16,6 +16,8 @@
 		<s:intercept-url pattern="/fournisseur/**" access="ROLE_ADMIN"/>
 		<s:intercept-url pattern="/utilisateur/" access="ROLE_ADMIN"/>
 		<s:intercept-url pattern="/utilisateur/**" access="ROLE_ADMIN"/>
+		<s:intercept-url pattern="/users/" access="ROLE_ADMIN"/>
+		<s:intercept-url pattern="/users/**" access="ROLE_ADMIN"/>
 		
 		<s:form-login login-page="/" default-target-url="/home/" authentication-failure-url="/failedlogin"/>
 		
@@ -29,8 +31,9 @@
 <!-- 			<s:password-encoder hash="md5" /> -->
 			<s:jdbc-user-service data-source-ref="dataSource" 
 				users-by-username-query="select mail, motDePasse, actived from utilisateur where mail=?" 
-				authorities-by-username-query="select u.mail, r.roleName from utilisateur u, roles r where u.idUtilisateur = r.idUtilisateur 
-				and u.mail=?" />
+				authorities-by-username-query="select u.mail, u.nameRole from utilisateur u where u.mail=?" />
+				<!--  authorities-by-username-query="select u.mail, r.roleName from utilisateur u, roles r where u.idUtilisateur = r.idUtilisateur -->
+				
 		</s:authentication-provider>
 	</s:authentication-manager>
 </beans:beans>
