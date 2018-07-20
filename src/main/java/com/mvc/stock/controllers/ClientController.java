@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -24,14 +26,22 @@ public class ClientController {
 
 	@Autowired
 	private IClientService clientService;
+	
+	
+	
+	private static final Logger logger = LoggerFactory.getLogger(ClientController.class);
 
 	@RequestMapping(value = "/")
 	public String client(Model model) {
+		
 		List<Client> clients = clientService.selectAll();
 		if (clients == null) {
 			clients = new ArrayList<Client>();
 		}
+	
+				
 		model.addAttribute("clients", clients);
+		logger.info("Welcome home! The client test");
 		return "client/client";
 	}
 

@@ -174,11 +174,13 @@
 			<i class="fa fa-caret-down"></i>
 	</a>
 		<ul class="dropdown-menu dropdown-user">
-			<li><a href="#"><i class="fa fa-user fa-fw"></i> User
+			<c:url value="/users/" var="users" />
+			<li><a href="${users }"><i class="fa fa-user fa-fw"></i> User
 					Profile</a></li>
 			<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
 			<li class="divider"></li>
-			<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>
+			<c:url value="/j_spring_security_logout" var="logout" />
+			<li><a href="${logout }"><i class="fa fa-sign-out fa-fw"></i>
 					Logout</a></li>
 		</ul> <!-- /.dropdown-user --></li>
 	<!-- /.dropdown -->

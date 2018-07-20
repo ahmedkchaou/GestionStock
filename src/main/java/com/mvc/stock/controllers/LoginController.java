@@ -24,7 +24,7 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String login(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		
 
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -32,6 +32,8 @@ public class LoginController {
 		String formattedDate = dateFormat.format(date);
 
 		model.addAttribute("serverTime", formattedDate);
+	    logger.info("This is an info log entry");
+        logger.error("This is an error log entry");
 
 		return "login/login";
 	}

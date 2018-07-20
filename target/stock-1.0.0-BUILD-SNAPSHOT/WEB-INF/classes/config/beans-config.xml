@@ -13,4 +13,9 @@
 			<property name="dao" ref="clientDao"></property>
 		</bean>
 		
+		<bean id="utilisateurDao" class="com.stock.mvc.dao.impl.UtilisateurDaoImpl" />
+		<bean id="utilisateurService" class="com.stock.mvc.services.impl.UtilisateurServiceImpl">
+			<property name="dao" ref="utilisateurDao"></property>
+		</bean>
+		
 </beans>
